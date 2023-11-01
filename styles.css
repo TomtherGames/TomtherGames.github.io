@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(124, 124, 124);
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 10vh;
+  }
+  
+  .about-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .about-button:hover {
+    background-color: #e60000;
+  }
+  
+  .falling-emoji {
+    position: absolute;
+    display: block;
+    top: -50px;
+    animation: fall 5s linear infinite;
+    font-size: 30px;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  

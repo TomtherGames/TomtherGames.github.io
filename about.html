@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - Tomther Games</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .falling-emoji {
+      position: absolute;
+      display: block;
+      top: -50px;
+      animation: fall 5s linear infinite;
+      font-size: 30px;
+    }
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff0000;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .back-button:hover {
+      background-color: #e60000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>About Us</h2>
+    <p>31.10.2023 11:31 PM (Polish time) p4n1h3r asked tomikbust if he wants to make the studio and tomikbust said yes, and that's how it started. Now they are trying to work. WTF!</p>
+    <a href="index.html" class="back-button">Back to Main Page</a>
+  </div>
+
+  <script>
+    function createFallingEmoji() {
+      const emoji = document.createElement("div");
+      emoji.innerHTML = "❄";
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      emoji.style.animationDelay = Math.random() + "s";
+      emoji.classList.add("falling-emoji");
+      document.body.appendChild(emoji);
+
+      setTimeout(function () {
+        emoji.remove();
+      }, 5000);
+    }
+
+    window.onload = function () {
+      const emojiCount = 15; // Adjust the number of emojis falling
+      for (let i = 0; i < emojiCount; i++) {
+        createFallingEmoji();
+      }
+      setInterval(createFallingEmoji, 1000);
+    };
+  </script>
+</body>
+</html>
